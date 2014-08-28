@@ -19,7 +19,7 @@ gulp.task("default", ["components", "styles", "scripts", "index"], function() {
 
 gulp.task("components", function() {
 
-	return gulp.src("src/components/*/*.jade")
+	return gulp.src("src/components/*/index.jade")
 	.pipe(jade(config.jade))
 	.pipe(gulp.dest("dist/components/"))
 
@@ -39,19 +39,6 @@ gulp.task("styles", function() {
 
 })
 gulp.task("index", function() {
-
-	config.jade.locals = {
-
-		components:[
-
-			"font-roboto",
-			"core-header-panel",
-			"core-toolbar",
-			"paper-tabs"
-
-		]
-
-	}
 
 	return gulp.src("src/index.jade")
 	.pipe(jade(config.jade))

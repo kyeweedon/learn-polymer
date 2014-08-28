@@ -5,12 +5,11 @@ html
 		meta(name="viewport", content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="/styles/index.css")
 
-		script(src="/components/platform/platform.js")
-		each component in components
-			link(rel="import", href="/components/" + component + "/" + component + ".html")
+		link(rel="import", href="/components")
+		link(rel="import", href="/components/kyes-header")
 
 	body(unresolved, touch-action="auto")
-		core-header-panel
+		kyes-header
 			core-toolbar
 				paper-tabs#tabs(selected="all", self-end)
 					paper-tab(name="all") ALL
