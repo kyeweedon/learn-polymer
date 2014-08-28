@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		title unquote
+		meta(name="viewport", content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
+		link(rel="stylesheet", href="/styles/index.css")
+
+		script(src="/components/platform/platform.js")
+		each component in components
+			link(rel="import", href="/components/" + component + "/" + component + ".html")
+
+	body(unresolved, touch-action="auto")
+		core-header-panel
+			core-toolbar
+				paper-tabs#tabs(selected="all", self-end)
+					paper-tab(name="all") ALL
+					paper-tab(name="favourites") favourites
+
+		script(src="/scripts/index.js")
